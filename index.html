@@ -9,32 +9,47 @@
 </head>
 <body>
   <div id="app">
+    <!-- NAVBAR -->
     <nav class="nav">
       <div class="nav-left">
         <div class="logo">
+          <!-- Лого/маскот (опционально положи assets/mascot.jpg) -->
           <img src="assets/mascot.jpg" alt="$BARK47" class="logo-img" />
           <span class="logo-text">BARK47</span>
         </div>
       </div>
+
       <div class="nav-center">
         <span class="slogan">Make Memecoins Great Again</span>
       </div>
+
       <div class="nav-right">
         <a class="pill" href="#" title="Скоро">BUY</a>
+
+        <!-- Капсула профиля (скрыта до авторизации) -->
         <div id="tgUser" class="user hidden" aria-live="polite">
-          <img class="avatar" id="avatar" alt="avatar"/>
+          <img class="avatar" id="avatar" alt="avatar" />
           <a class="uname" id="uname" target="_blank" rel="noreferrer"></a>
           <button id="logout" class="logout" title="Выйти" aria-label="Logout">×</button>
         </div>
+
+        <!-- Контейнер для виджета Telegram (скрипт сам инжектит сюда) -->
         <div id="tgLogin" class="tg-login" aria-hidden="true"></div>
       </div>
     </nav>
 
+    <!-- HERO -->
     <header class="hero">
       <div class="hero-inner">
         <h1 class="season">SEASON 1</h1>
+
+        <!-- Таймер -->
         <div class="timer" id="timer">00:00:00</div>
-        <div class="subtitle" id="subtitle" tabindex="0">попробуй запустить таймер</div>
+
+        <!-- Подсказка/пасхалка: держать 4.7с -->
+        <div class="subtitle" id="unlockText" tabindex="0">попробуй запустить таймер</div>
+
+        <!-- Прогресс-бар ключей (опционально стилизуй в styles.css) -->
         <div class="progress-wrap">
           <span id="keysLabel" class="keys">Keys: 0/2</span>
           <div class="bar"><div id="barFill" class="fill" style="width:0%"></div></div>
@@ -42,19 +57,23 @@
       </div>
     </header>
 
+    <!-- GRID с заблокированными разделами (декор/тизер) -->
     <main class="grid">
       <article class="card locked" data-tooltip="Запусти Season 1, чтобы войти.">
         <div class="card-hd"><div class="emj">🐶</div><h3>Dog House</h3></div>
         <p>Дом Барка: арты, вайб, мемы.</p>
       </article>
+
       <article class="card locked" data-tooltip="Запусти Season 1, чтобы войти.">
         <div class="card-hd"><div class="emj">📈</div><h3>Barkonomics</h3></div>
         <p>Токеномика без воды.</p>
       </article>
+
       <article class="card locked" data-tooltip="Запусти Season 1, чтобы войти.">
         <div class="card-hd"><div class="emj">🚩</div><h3>Rally HQ</h3></div>
         <p>Штаб рейдов и заданий.</p>
       </article>
+
       <article class="card locked" data-tooltip="Запусти Season 1, чтобы войти.">
         <div class="card-hd"><div class="emj">🛡️</div><h3>Old Guard</h3></div>
         <p>Зал олдов: роли, значки.</p>
@@ -66,7 +85,10 @@
     </footer>
   </div>
 
+  <!-- Toast контейнер (скрипт может создавать свои, но этот запасной) -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Скрипты -->
   <script src="script.js"></script>
 </body>
 </html>
